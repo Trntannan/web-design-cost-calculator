@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 3vw;
+    width: 80%;
+    max-width: 800px;
+    background-color: #1C2C48;
+}
+
+span {
+    max-width: 100px;
+    max-height: 10vw;
+    padding: 1vw;
+    border-color: #207DE9;
+    color: #207DE9;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+    font-size: 1.7vw;
+}
+
+/* Page Count and SEO */
+#seo-page-count.rangeBar,
+#page-count.rangeBar {
+    width: 40%;
+}
+
+label.range-label {
+    min-width: 250px;
+}
+
+#seo-page-count,
+#seo-page-count-value {
+    display: none;
+}
+
+.seo-buttons,
+.seo-range,
+.seo-diff {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Buttons and Inputs */
+#enquire {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    height: 7vw;
+    width: 20vw;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 3vw;
+    color: #207DE9;
+    padding: 1vw 2vw;
+    
+}
+
+#submit {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    height: 7vw;
+    width: 35vw;
+    background-color: red;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 3vw;
+    color: white;
+    padding: 1vw 2vw;
+    border: none;
+}
+
+.choice-btn,
+.seo-btn,
+.platformOptions {
+    border-color: #207DE9;
+    color: #207DE9;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 1.8vw;
+    max-width: 25vw;
+    padding: 1vw 2vw;
+}
+
+.platformOptions {
+    width: 50vw;
+    max-width: 45vw;
+}
+
+/* Styling and Dropdown */
+.style,
+.page-count,
+.seo,
+.e_com,
+.cms,
+.platform,
+.data_base,
+.seo, .form-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8vw;
+}
+
+.dropdown-content option {
+    color: #207DE9;
+}
+
+.dropdown-content option:hover {
+    background-color: #207DE9;
+}
+
+
+/* Input Range */
+.input-group input[type="range"] {
+    width: 100%;
+}
+
+.input-group input[type="range"]::-moz-range-thumb {
+    width: 4vw;
+    height: 4vw;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Button States */
+.chosen {
+    background-color: #207DE9;
+    color: white;
+}
+
+.not-chosen {
+    background-color: #CCCCCC; /* Grey color */
+    color: #666666;
+}
+
+/* Email Form */
+
+#name, #email, #phone, #company, #website {
+    width: 70%;
+    height: 3vw;
+    background-color: #121D32;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+#quoteDetails {
+    display: flex;
+    flex-direction: column;
+    background-color: #121D32;
+    width: 70%;
+    height: 40vw;
+    border: none;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.req {
+    color: red;
+    background: none;
+}
+
+#quoteDetails {
+    display: flex;
+    
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+#emailForm {
+    display: none;
+}

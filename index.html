@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website Development Price Calculator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+        <main id="mainPage">
+            <header>
+                <h1>Project Quote Calculator</h1>
+            </header>
+            <div class="page-count">
+                <label class="range-label" for="page-count" >PAGE COUNT</label>
+                <input type="range" id="page-count" class="rangeBar" value="1" min="1" max="250" step="1">
+                <span id="page-count-value">1</span>
+            </div>
+            <div class="seo">
+                <label class="range-label" for="seo" >SEO      </label> 
+                <input type="range" id="seo-page-count" class="rangeBar" value="1" min="1" max="250" step="1">
+                <span id="seo-page-count-value">1</span>
+                <div class="seo-buttons">
+                    <input type="button" class="seo-btn" value="On-page SEO"></input>
+                    <input type="button" class="seo-btn"  value="Technical SEO"></input>
+                </div>
+            </div>
+            <div class="style">
+                <label for="styling" >STYLING</label> 
+                <div class="buttons">
+                    <input type="button" class="choice-btn"  value="Simple"></input>
+                    <input type="button" class="choice-btn" value="Moderate" ></input >
+                    <input type="button" class="choice-btn" value="High-End"></input>
+                    <input type="button" class="choice-btn"  value="World Class"></input >
+                </div>
+            </div>
+            <div class="e_com">
+                <label for="ecommerce" >eCOMMERCE</label> 
+                <div class="buttons">
+                    <input type="button" class="choice-btn"  value="None"></input>
+                    <input type="button" class="choice-btn" value="Basic" ></input >
+                    <input type="button" class="choice-btn" value="Advanced"></input>
+                    <input type="button" class="choice-btn"  value="Enterprise"></input >
+                </div>
+            </div>
+            <div class="cms">
+                <label for="CMS" >CMS INTEGRATION</label> 
+                <div class="buttons">
+                    <input type="button" class="choice-btn"  value="None"></input>
+                    <input type="button" class="choice-btn" value="Basic" ></input >
+                    <input type="button" class="choice-btn" value="Advanced"></input>
+                    <input type="button" class="choice-btn"  value="Enterprise"></input >
+                </div>
+            </div>
+            <div id="output">
+                <display id="output"></display>
+            </div>
+            <div class="data_base">
+                <label for="data base intergration" >DATA BASE INTEGRATION</label> 
+                <div class="buttons">
+                    <input type="button" class="choice-btn"  value="None"></input>
+                    <input type="button" class="choice-btn" value="Basic" ></input >
+                    <input type="button" class="choice-btn" value="Advanced"></input>
+                    <input type="button" class="choice-btn"  value="Full"></input >
+                </div>
+            </div>
+            <div class="platform">
+                <label for="platform">PLATFORM</label> 
+                <select class="platformOptions">
+                    <option value="1" >Select Platform</option>
+                    <option value="2">Custom</option>
+                    <option value="3">Shopify</option>
+                    <option value="4">Webflow</option>
+                    <option value="5">Wix</option>
+                    <option value="6">Rocketspace</option>
+                    <option value="7">Squarespace</option>
+                    <option value="8">Wordpress</option>
+                    <option value="9">Woocommerce</option>
+                  </select>
+            </div>
+            <input type="button"  id="enquire"  value="Quote" onClick=calculatePrice()></input>
+            
+        </main>
+        <main id="emailForm" class="hidden">
+            <header>
+                <h1>Project Quote Calculator</h1>
+                <p id="quote-statement">text</p>
+            </header>
+            <div class="form-input">
+                <label for="name">Name<span class="req">*</span></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-input">
+                <label for="email">Email<span class="req">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-input">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+            </div>
+
+            <div class="form-input">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-input">
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website">
+            </div>
+
+            <div class="form-input">
+                <label for="quoteDetails">Quote Details:</label>
+                <input id="quoteDetails" name="quoteDetails" readonly></input>
+            </div>
+
+            <input type="button"  id="submit"  value="Send me a proposal" onClick=getQuote()></input>            </form>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
