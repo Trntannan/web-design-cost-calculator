@@ -16,21 +16,20 @@ header {
     text-align: center;
     width: 100%;
     margin-bottom: 10vw;
-    align-self: center;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    
     padding: 3vw;
     width: 80%;
     max-width: 800px;
     background-color: #1C2C48;
 }
 
-span {
-    max-width: 100px;
+#range-value {
+    text-align: center;
+    max-width: 7.5vw;
     max-height: 10vw;
     padding: 1vw;
     border-color: #207DE9;
@@ -45,6 +44,13 @@ label {
     color: white;
     font-weight: bold;
     font-size: 1.7vw;
+}
+
+div.form-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
 }
 
 /* Page Count and SEO */
@@ -72,36 +78,31 @@ label.range-label {
 }
 
 /* Buttons and Inputs */
-#enquire {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-content: center;
-    height: 7vw;
-    width: 20vw;
-    background-color: white;
-    border-radius: 10px;
-    font-weight: bolder;
-    font-size: 3vw;
-    color: #207DE9;
-    padding: 1vw 2vw;
-    
-}
-
+#enquire,
 #submit {
     display: flex;
     flex-direction: row;
     align-self: center;
-    justify-content: center;
     height: 7vw;
-    width: 35vw;
-    background-color: red;
-    border-radius: 10px;
     font-weight: bolder;
     font-size: 3vw;
-    color: white;
     padding: 1vw 2vw;
+}
+
+#enquire {
+    justify-content: center;
+    width: 20vw;
+    color: #207DE9;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#submit {
+    width: 35vw;
+    color: white;
+    background-color: red;
     border: none;
+    border-radius: 10px;
 }
 
 .choice-btn,
@@ -131,7 +132,8 @@ label.range-label {
 .cms,
 .platform,
 .data_base,
-.seo, .form-input {
+.seo,
+.form-input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -174,30 +176,34 @@ label.range-label {
 
 /* Email Form */
 
-#name, #email, #phone, #company, #website {
+#name,
+#email,
+#phone,
+#company,
+#website {
     width: 70%;
     height: 3vw;
     background-color: #121D32;
     border: none;
     border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
 }
 
 #quoteDetails {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     background-color: #121D32;
+    color: white;
     width: 70%;
     height: 40vw;
     border: none;
     border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 .req {
@@ -205,14 +211,13 @@ label.range-label {
     background: none;
 }
 
-#quoteDetails {
-    display: flex;
-    
-    color: white;
-    font-size: 1.5vw;
-    font-weight: bold;
-}
-
 #emailForm {
     display: none;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
