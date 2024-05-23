@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,43 +8,41 @@ body {
 }
 
 header {
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: white;
     padding: 20px;
-    text-align: center;
     width: 100%;
-    margin-bottom: 10vw;
+    margin-bottom: 4vw;
 }
 
 main {
     display: flex;
     flex-direction: column;
     padding: 3vw;
-    width: 80%;
+    width: 75%;
     max-width: 800px;
     background-color: #1C2C48;
 }
 
-#range-value {
-    text-align: center;
-    max-width: 7.5vw;
-    max-height: 10vw;
-    padding: 1vw;
-    border-color: #207DE9;
-    color: #207DE9;
-    background-color: white;
-    border-radius: 6px;
-    font-weight: bolder;
-    font-size: 2vw;
+h1 {
+    font-size: 3vw;
+    font-weight: 800;
 }
 
 label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: white;
     font-weight: bold;
     font-size: 1.7vw;
 }
+
 
 div.form-input {
     display: flex;
@@ -59,22 +57,19 @@ div.form-input {
     width: 40%;
 }
 
-label.range-label {
-    max-width: 250px;
-    width: 18vw;
-}
-
 #seo-page-count,
 #seo-page-count-value {
     display: none;
 }
 
-.buttons,
-.seo-range,
-.seo-diff {
+.buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#seoYes, #designYes {
+    margin-left: 10%;
 }
 
 /* Buttons and Inputs */
@@ -84,9 +79,9 @@ label.range-label {
     flex-direction: row;
     align-self: center;
     height: 7vw;
-    font-weight: bolder;
-    font-size: 3vw;
     padding: 1vw 2vw;
+    font-size: 1.5vw;
+    font-weight: 800;
 }
 
 #enquire {
@@ -95,18 +90,42 @@ label.range-label {
     color: #207DE9;
     background-color: white;
     border-radius: 10px;
+    
 }
 
 #submit {
+    justify-content: center;
     width: 35vw;
     color: white;
     background-color: red;
     border: none;
     border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seo-btn,
+.design-btn {
+    border-color: #207DE9;
+    color: #207DE9;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 1.8vw;
+    width: 23vw;
+    padding: 1vw 1.5vw;
 }
 
 .choice-btn,
-.seo-btn,
 .platformOptions {
     border-color: #207DE9;
     color: #207DE9;
@@ -114,8 +133,21 @@ label.range-label {
     border-radius: 6px;
     font-weight: bolder;
     font-size: 1.8vw;
-    max-width: 25vw;
-    padding: 1vw 2vw;
+    max-width: 20vw;
+    padding: 1vw 1.5vw;
+}
+
+#range-value {
+    text-align: center;
+    max-width: 7.5vw;
+    /* max-height: 10vw; */
+    padding: 1vw;
+    border-color: #207DE9;
+    color: #207DE9;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bolder;
+    font-size: 1.8vw;
 }
 
 .platformOptions {
@@ -127,6 +159,7 @@ label.range-label {
 .style,
 .page-count,
 .seo,
+.design,
 .seoCount,
 .e_com,
 .cms,
@@ -138,7 +171,7 @@ label.range-label {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 8vw;
+    margin-bottom: 6vw;
 }
 
 .dropdown-content option {
@@ -192,9 +225,9 @@ label.range-label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    
     background-color: #121D32;
-    color: white;
+    color: grey;
     width: 70%;
     height: 40vw;
     border: none;
@@ -215,9 +248,4 @@ ul {
     display: none;
 }
 
-.submit {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
+

@@ -10,22 +10,29 @@
         
         <main id="mainPage">
             <header>
-                <h1>Project Quote Calculator</h1>
+                <h1>Web Design Cost Calculator</h1>
             </header>
             <div class="page-count">
-                <label class="range-label" for="page-count" >PAGE COUNT</label>
+                <label for="page-count" >PAGE COUNT</label>
                 <input type="range" id="page-count" class="rangeBar" value="1" min="1" max="5" step="1">
                 <input id="range-value" readonly>
             </div>
             <div class="seo">
                 <label for="seo" >SEO</label> 
                 <div class="buttons">
-                    <input type="button" class="seo-btn" value="NO"></input>
-                    <input type="button" class="seo-btn"  value="YES"></input>
+                    <input id="seoNo"  type="button" class="seo-btn" value="NO"></input>
+                    <input id="seoYes" type="button" class="seo-btn"  value="YES"></input>
+                </div>
+            </div>
+            <div class="design">
+                <label for="design" >RESPONSIVE DESIGN</label> 
+                <div class="buttons">
+                    <input id="designNo" type="button" class="design-btn" value="NO"></input>
+                    <input id="designYes" type="button" class="design-btn"  value="YES"></input>
                 </div>
             </div>
             <div class="style">
-                <label for="styling" >STYLING</label> 
+                <label for="styling" >DESIGN STYLE</label> 
                 <div class="buttons">
                     <input type="button" class="choice-btn"  value="Simple"></input>
                     <input type="button" class="choice-btn" value="Moderate" ></input >
@@ -34,7 +41,7 @@
                 </div>
             </div>
             <div class="e_com">
-                <label for="ecommerce" >e-COMMERCE</label> 
+                <label for="ecommerce" >e-COMMERCE FUNCTIONALITY</label> 
                 <div class="buttons">
                     <input type="button" class="choice-btn"  value="None"></input>
                     <input type="button" class="choice-btn" value="Basic" ></input >
@@ -77,21 +84,21 @@
                     <option>Woocommerce</option>
                   </select>
             </div>
-            <input type="button"  id="enquire"  value="Quote" onClick=calculatePrice()></input>
+            <input type="button"  id="enquire"  value="See Pricing" onClick=calculatePrice()></input>
             
         </main>
-        <main id="emailForm" class="hidden">
+        <main id="emailForm" >
             <header>
                 <h1>Project Quote Calculator</h1>
                 <p id="quote-statement">text</p>
             </header>
             <div class="form-input">
-                <label for="name">Name<span class="req">*</span></label>
+                <label  for="name">Name <span class=" req"style="padding-left: 5px" >*</span></label>
                 <input type="text" id="name" name="name" required>
             </div>
 
             <div class="form-input">
-                <label for="email">Email<span class="req">*</span></label>
+                <label for="email">Email<span class="req" style="padding-left: 5px">*</span></label>
                 <input type="email" id="email" name="email" required>
             </div>
 
