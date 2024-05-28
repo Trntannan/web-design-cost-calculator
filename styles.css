@@ -169,9 +169,13 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #submit:active {
-  background-color: #990000; 
+  background-color: #990000;
   box-shadow: 2px 4px 5px #1c2c48;
   transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
 }
 
 
@@ -219,6 +223,10 @@ input[type="range"]::-moz-range-thumb {
   background-color: #207de9;
   box-shadow: 2px 4px 5px #1c2c48;
   transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+  -moz-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  -o-transform: translateY(4px);
 }
 
 .platform-options {

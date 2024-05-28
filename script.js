@@ -1,127 +1,182 @@
 // Handlers
-document.addEventListener("DOMContentLoaded", function () {
-  let pageCountValue = document.getElementById("range-value");
-  let slider = document.getElementById("page-count");
+let pageCountValue = document.getElementById("range-value");
+let slider = document.getElementById("page-count");
 
-  // Function to update pageCountValue based on slider value
-  function updatePageCountValue() {
-    let sliderValue = parseInt(slider.value);
-    let pageCount = "";
+// Function to update pageCountValue based on slider value
+function updatePageCountValue() {
+  let sliderValue = parseInt(slider.value);
+  let pageCount = "";
 
-    // Determine pageCount range based on the slider steps
-    if (sliderValue === 1) {
-      pageCountValue.value = "1-10";
-      pageCount = "1-10";
-      console.log("1-10");
-    } else if (sliderValue === 2) {
-      pageCountValue.value = "10-50";
-      pageCount = "10-50";
-      console.log("10-50");
-    } else if (sliderValue === 3) {
-      pageCountValue.value = "50-150";
-      pageCount = "50-150";
-      console.log("50-150");
-    } else if (sliderValue === 4) {
-      pageCountValue.value = "150-250";
-      pageCount = "150-250";
-      console.log("150-250");
-    } else if (sliderValue === 5) {
-      pageCountValue.value = "250+";
-      pageCount = "250+";
-      console.log("250+");
-    }
+  // Determine pageCount range based on the slider steps
+  if (sliderValue === 1) {
+    pageCountValue.value = "1-10";
+    pageCount = "1-10";
+    console.log("1-10");
+  } else if (sliderValue === 2) {
+    pageCountValue.value = "10-50";
+    pageCount = "10-50";
+    console.log("10-50");
+  } else if (sliderValue === 3) {
+    pageCountValue.value = "50-150";
+    pageCount = "50-150";
+    console.log("50-150");
+  } else if (sliderValue === 4) {
+    pageCountValue.value = "150-250";
+    pageCount = "150-250";
+    console.log("150-250");
+  } else if (sliderValue === 5) {
+    pageCountValue.value = "250+";
+    pageCount = "250+";
+    console.log("250+");
   }
+}
 
-  // Function to handle input changes for page count
-  function handleInputChanges(inputId, valueId) {
-    let input = document.getElementById(inputId);
-    let value = document.getElementById(valueId);
-    input.addEventListener("input", function () {
-      value.textContent = this.value;
-    });
-  }
-
-  // handle custom slider input
-  const range = document.querySelector("#page-count");
-  range.addEventListener("input", () => {
-    const min = range.min;
-    const max = range.max;
-    const currentVal = range.value;
-
-    range.style.backgroundSize =
-      ((currentVal - min) / (max - min)) * 100 + "% 100%";
+// Function to handle input changes for page count
+function handleInputChanges(inputId, valueId) {
+  let input = document.getElementById(inputId);
+  let value = document.getElementById(valueId);
+  input.addEventListener("input", function () {
+    value.textContent = this.value;
   });
+}
 
-  // Function to handle button clicks for styling, e-com, CMS, and database
-  function handleButtonClicks(groupClassName) {
-    document
-      .querySelectorAll("." + groupClassName + " .choice-btn")
-      .forEach((button) => {
-        button.addEventListener("click", () => {
-          document
-            .querySelectorAll("." + groupClassName + " .choice-btn")
-            .forEach((btn) => {
-              btn.classList.remove("chosen");
-              btn.classList.add("not-chosen");
-            });
-          button.classList.remove("not-chosen");
-          button.classList.add("chosen");
-          console.log(button.value);
-        });
-      });
-  }
+// handle custom slider input
+const range = document.querySelector("#page-count");
+range.addEventListener("input", () => {
+  const min = range.min;
+  const max = range.max;
+  const currentVal = range.value;
 
-  // Handle SEO button clicks
-  document.querySelectorAll(".seo-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".seo-btn").forEach((btn) => {
-        btn.classList.remove("chosen");
-        btn.classList.add("not-chosen");
-      });
-      button.classList.remove("not-chosen");
-      button.classList.add("chosen");
-
-      if (button.value === "NO") {
-        console.log("No SEO");
-      } else if (button.value === "YES") {
-        console.log("Yes SEO");
-      }
-    });
-  });
-
-  // Handle Responsive Design button clicks
-  document.querySelectorAll(".design-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".design-btn").forEach((btn) => {
-        btn.classList.remove("chosen");
-        btn.classList.add("not-chosen");
-      });
-      button.classList.remove("not-chosen");
-      button.classList.add("chosen");
-
-      if (button.value === "NO") {
-        console.log("On-page SEO");
-      } else if (button.value === "YES") {
-        console.log("Technical SEO");
-      }
-    });
-  });
-
-  // Add event listener to slider to listen for changes in value
-  slider.addEventListener("input", updatePageCountValue);
-
-  // Call the function initially to set the initial value
-  updatePageCountValue();
-
-  // Call handleInputChanges function for page count
-  handleInputChanges("page-count", "page-count-value", "range-value");
-
-  // Call handleButtonClicks function for styling, e-com, CMS, and database
-  handleButtonClicks("style");
-  handleButtonClicks("e_com");
-  handleButtonClicks("cms");
-  handleButtonClicks("data_base");
+  range.style.backgroundSize =
+    ((currentVal - min) / (max - min)) * 100 + "% 100%";
 });
+
+// Function to handle button clicks for styling, e-com, CMS, and database
+function handleButtonClicks(groupClassName) {
+  document
+    .querySelectorAll("." + groupClassName + " .choice-btn")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        document
+          .querySelectorAll("." + groupClassName + " .choice-btn")
+          .forEach((btn) => {
+            btn.classList.remove("chosen");
+            btn.classList.add("not-chosen");
+          });
+        button.classList.remove("not-chosen");
+        button.classList.add("chosen");
+        console.log(button.value);
+      });
+    });
+}
+
+// Handle SEO button clicks
+document.querySelectorAll(".seo-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".seo-btn").forEach((btn) => {
+      btn.classList.remove("chosen");
+      btn.classList.add("not-chosen");
+    });
+    button.classList.remove("not-chosen");
+    button.classList.add("chosen");
+
+    if (button.value === "NO") {
+      console.log("No SEO");
+    } else if (button.value === "YES") {
+      console.log("Yes SEO");
+    }
+  });
+});
+
+// Handle Responsive Design button clicks
+document.querySelectorAll(".design-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".design-btn").forEach((btn) => {
+      btn.classList.remove("chosen");
+      btn.classList.add("not-chosen");
+    });
+    button.classList.remove("not-chosen");
+    button.classList.add("chosen");
+
+    if (button.value === "NO") {
+      console.log("On-page SEO");
+    } else if (button.value === "YES") {
+      console.log("Technical SEO");
+    }
+  });
+});
+
+// Add event listener to slider to listen for changes in value
+slider.addEventListener("input", updatePageCountValue);
+
+// Call the function initially to set the initial value
+updatePageCountValue();
+
+// Call handleInputChanges function for page count
+handleInputChanges("page-count", "page-count-value", "range-value");
+
+// Call handleButtonClicks function for styling, e-com, CMS, and database
+handleButtonClicks("style");
+handleButtonClicks("e_com");
+handleButtonClicks("cms");
+handleButtonClicks("data_base");
+
+
+// Function to validate page count input
+function validatePageCount(pageCount) {
+  const validPageCounts = ["1-10", "10-50", "50-150", "150-250", "250+"];
+  return validPageCounts.includes(pageCount);
+}
+
+// Function to validate SEO button selection
+function validateSEO(seoType) {
+  return seoType === "YES" || seoType === "NO";
+}
+
+// Function to validate Responsive Design button selection
+function validateDesign(designType) {
+  return designType === "YES" || designType === "NO";
+}
+
+// Function to validate Style button selection
+function validateStyle(styleType) {
+  const validStyleTypes = ["Simple", "Moderate", "High-End", "World Class"];
+  return validStyleTypes.includes(styleType);
+}
+
+// Function to validate E-commerce button selection
+function validateEcommerce(ecommerceType) {
+  const validEcommerceTypes = ["Basic", "Advanced", "Enterprise"];
+  return validEcommerceTypes.includes(ecommerceType);
+}
+
+// Function to validate CMS button selection
+function validateCMS(cmsType) {
+  const validCMSTypes = ["Basic", "Advanced", "Enterprise"];
+  return validCMSTypes.includes(cmsType);
+}
+
+// Function to validate Database button selection
+function validateDatabase(databaseType) {
+  const validDatabaseTypes = ["Basic", "Advanced", "Full"];
+  return validDatabaseTypes.includes(databaseType);
+}
+
+// Function to validate Platform selection
+function validatePlatform(platformType) {
+  const validPlatformTypes = [
+    "Custom",
+    "Webflow",
+    "Shopify",
+    "Squarespace",
+    "Wordpress",
+    "Woocommerce",
+    "Wix",
+    "Rocketspark"
+  ];
+  return validPlatformTypes.includes(platformType);
+}
+
 
 function calculatePrice() {
   // Check if any option is not selected
@@ -353,22 +408,5 @@ function displayErrorModal(errorMessages) {
 }
 
 function getQuote() {
-  const form = document.getElementById("quoteForm");
-  const formData = new FormData(form);
-
-  fetch("/", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (response.ok) {
-        console.log("Form submitted successfully");
-        window.location.href = "completed.html";
-      } else {
-        console.error("Form submission failed");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  window.location.href = "completed.html";
 }

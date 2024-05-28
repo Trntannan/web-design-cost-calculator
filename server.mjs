@@ -21,7 +21,7 @@ db.serialize(() => {
 });
 
 // Define endpoint to handle form submissions
-app.post('/', (req, res) => {
+app.post('/submit', (req, res) => {
     const { name, email, phone, company, website, quote_details } = req.body;
 
     // Save form data to SQLite database
