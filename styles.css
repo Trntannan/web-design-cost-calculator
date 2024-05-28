@@ -146,7 +146,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   width: 35vw;
   color: white;
-  background-color: red;
+  background-color: darkred;
   border: none;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -161,6 +161,19 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   align-items: center;
 }
+
+#submit:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
+#submit:active {
+  background-color: #990000; 
+  box-shadow: 2px 4px 5px #1c2c48;
+  transform: translateY(2px);
+}
+
 
 .seo-btn,
 .design-btn {
@@ -315,8 +328,11 @@ input[type="range"]::-moz-range-thumb {
 }
 
 ul {
-  list-style-type: none;
-  padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 .req {
@@ -454,10 +470,6 @@ ul {
     padding: 0.5rem 1rem;
   }
 
-  .choice-select {
-
-  }
-
   .style,
   .page-count,
   .seo,
@@ -484,6 +496,15 @@ ul {
     max-width: 30%;
     font-size: 1rem;
   }
+
+  div.form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
 
   #quoteDetails {
     height: 10rem;

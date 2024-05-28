@@ -127,20 +127,26 @@ function calculatePrice() {
   // Check if any option is not selected
   let errorMessages = [];
 
-  if (document.querySelector(".platform-options").value === "Select Platform") {
-    errorMessages.push("Please select a platform.");
+  if (document.querySelector(".seo-btn.chosen") === null) {
+    errorMessages.push("Please select a SEO option.");
   }
-  if (document.querySelector(".style .choice-btn") === null) {
+  if (document.querySelector(".design-btn.chosen") === null) {
+    errorMessages.push("Please select a Responsive Design option.");
+  }
+  if (document.querySelector(".style .choice-btn.chosen") === null) {
     errorMessages.push("Please select a design style.");
   }
-  if (document.querySelector(".e_com .choice-btn") === null) {
+  if (document.querySelector(".e_com .choice-btn.chosen") === null) {
     errorMessages.push("Please select an e-commerce functionality.");
   }
-  if (document.querySelector(".cms .choice-btn") === null) {
+  if (document.querySelector(".cms .choice-btn.chosen") === null) {
     errorMessages.push("Please select a CMS integration option.");
   }
-  if (document.querySelector(".data_base .choice-btn") === null) {
+  if (document.querySelector(".data_base .choice-btn.chosen") === null) {
     errorMessages.push("Please select a database integration option.");
+  }
+  if (document.querySelector(".platform-options").value === "Select Platform") {
+    errorMessages.push("Please select a platform.");
   }
   if (errorMessages.length > 0) {
     // Display error messages
@@ -347,5 +353,22 @@ function displayErrorModal(errorMessages) {
 }
 
 function getQuote() {
-  window.location.href = "completed.html";
+  const form = document.getElementById("quoteForm");
+  const formData = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        window.location.href = "completed.html";
+      } else {
+        console.error("Form submission failed");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
