@@ -209,13 +209,13 @@ function calculatePrice() {
   if (platformType === "Custom") {
     platformPrice = 0;
   } else if (platformType === "Webflow") {
-    platformPrice = 0.9; // 10% discount
+    platformPrice = 0.9; 
   } else if (platformType === "Shopify" || platformType === "Squarespace" || platformType === "Wordpress" || platformType === "Woocommerce") {
-    platformPrice = 0.75; // 25% discount
+    platformPrice = 0.75; 
   } else if (platformType === "Wix" || platformType === "Rocketspark") {
-    platformPrice = 0.7; // 30% discount
+    platformPrice = 0.7; 
   } else {
-    platformPrice = 1; // No change
+    platformPrice = 1; 
   }
 
   // Calculate total price
@@ -244,14 +244,14 @@ function calculatePrice() {
 
   // Construct the quote details
   let quoteDetailsArray = [
-    `<li>Number of Pages: ${pageCount}</li><br>`,
-    `<li>Style of Design: ${styleType}</li><br>`,
-    `<li>Responsive Design: ${designType}</li><br>`,
-    `<li>SEO Integration: ${seoType}</li><br>`,
-    `<li>Database Integration: ${databaseType}</li><br>`,
-    `<li>eCommerce Functionality: ${ecommerceType}</li><br>`,
-    `<li>CMS: ${cmsType}</li><br>`,
-     `<li>Platform: ${platformType}</li><br>`,
+    `<li>Number of Pages: ${pageCount}</li>`,
+    `<li>Style of Design: ${styleType}</li>`,
+    `<li>Responsive Design: ${designType}</li>`,
+    `<li>SEO Integration: ${seoType}</li>`,
+    `<li>Database Integration: ${databaseType}</li>`,
+    `<li>eCommerce Functionality: ${ecommerceType}</li>`,
+    `<li>CMS: ${cmsType}</li>`,
+    `<li>Platform: ${platformType}</li>`,
     `<li>Estimated Price: $${totalPriceA} - $${totalPriceB}</li>`
   ];
 
@@ -268,4 +268,8 @@ function calculatePrice() {
   // Switch between forms
   document.getElementById("mainPage").style.display = "none";
   document.getElementById("emailForm").style.display = "block";
+}
+
+function getQuote() {
+  window.location.href = "completed.html"
 }

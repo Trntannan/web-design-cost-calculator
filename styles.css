@@ -28,9 +28,26 @@ main {
     background-color: #1C2C48;
 }
 
-h1 {
+h1, h2 {
     font-size: 3vw;
     font-weight: 800;
+}
+
+h2 {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 4vw;
+}
+
+i {
+    margin-left: 8px;
+    margin-bottom: 5px;
 }
 
 label {
@@ -87,6 +104,7 @@ div.form-input {
 #enquire {
     justify-content: center;
     width: 20vw;
+    border-color: #207DE9;
     color: #207DE9;
     background-color: white;
     border-radius: 10px;
@@ -125,8 +143,8 @@ div.form-input {
     padding: 1vw 1.5vw;
 }
 
-.choice-btn,
-.platformOptions {
+.platformOptions, 
+.choice-btn {
     border-color: #207DE9;
     color: #207DE9;
     background-color: white;
@@ -182,7 +200,6 @@ div.form-input {
     background-color: #207DE9;
 }
 
-
 /* Input Range */
 .input-group input[type="range"] {
     width: 100%;
@@ -203,12 +220,11 @@ div.form-input {
 }
 
 .not-chosen {
-    background-color: #CCCCCC; /* Grey color */
+    background-color: #CCCCCC; 
     color: #666666;
 }
 
 /* Email Form */
-
 #name,
 #email,
 #phone,
@@ -225,7 +241,6 @@ div.form-input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
     background-color: #121D32;
     color: grey;
     width: 70%;
@@ -244,8 +259,103 @@ ul {
     background: none;
 }
 
-#emailForm {
+#emailForm, .choice-select {
     display: none;
 }
+
+/* Add this media query for screens under 425px width */
+@media screen and (max-width: 509px) {
+    header {
+        display: flex;
+        flex-wrap: wrap; 
+        
+    }
+
+    h1 {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        font-size: 1.5rem;
+    }
+
+    label {
+        text-align: center;
+        flex-direction: column; 
+        font-size: 1.2rem; 
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    #enquire {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60vw;
+        color: #207DE9;
+        background-color: white;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        padding: 1vw 1.5vw;
+        margin-top: 1rem;
+    }
+
+    .choice-select, .platformOptions {
+        display: block;
+        margin-top: .5rem;
+        border-color: #207DE9;
+        color: #207DE9;
+        background-color: white;
+        border-radius: 6px;
+        font-weight: bolder;
+        font-size: 1rem;
+        width: 50vw;
+        max-width: 45vw;
+        padding: 0.5rem 1rem
+    }
+
+    .style,
+    .page-count,
+    .seo,
+    .design,
+    .seoCount,
+    .e_com,
+    .cms,
+    .platform,
+    .data_base,
+    .seo,
+    .form-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2vw;
+    }
+
+    /* .platformOptions {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        max-width: 80%;
+        margin-top: 1rem;
+    } */
+
+    input#page-count.rangeBar {
+        width: 90%;
+    }
+
+    #range-value {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+
+    #quoteDetails {
+        height: 10rem;
+    }
+}
+
+
+
 
 
