@@ -18,10 +18,15 @@
                 </div>
             </div>
             <div class="page-count">
-                <label for="page-count" class="tooltip" >PAGE COUNT <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The number of pages in your website.</span></label>
-                <input type="range" id="page-count" class="slider" value="1" min="1" max="5" step="1">
-                <input id="range-value" readonly>
-            </div>
+                <label for="Page Count" class="tooltip" >Page Count <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The level of styling in your website.</span></label> 
+                <div class="buttons" required>
+                    <input type="button" class="page-count-btn"  value="1-10"></input>
+                    <input type="button" class="page-count-btn" value="10-50" ></input >
+                    <input type="button" class="page-count-btn" value="50-150"></input>
+                    <input type="button" class="page-count-btn"  value="150-250"></input >
+                    <input type="button" class="page-count-btn"  value="250+"></input >
+                </div>
+            </div>    
             <div class="seo">
                 <label for="seo" class="tooltip" >SEO <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">"YES" For Technical SEO integration.</span></label> 
                 <div class="buttons" required>
@@ -49,10 +54,10 @@
             <div class="style">
                 <label for="styling" class="tooltip" >DESIGN STYLE <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The level of styling in your website.</span></label> 
                 <div class="buttons" required>
-                    <input type="button" class="choice-btn"  value="Simple"></input>
-                    <input type="button" class="choice-btn" value="Moderate" ></input >
-                    <input type="button" class="choice-btn" value="High-End"></input>
-                    <input type="button" class="choice-btn"  value="World Class"></input >
+                    <input type="button" class="style-btn"  value="Simple"></input>
+                    <input type="button" class="style-btn" value="Moderate" ></input >
+                    <input type="button" class="style-btn" value="High-End"></input>
+                    <input type="button" class="style-btn"  value="World Class"></input >
                 </div>
                 <select id="styleOptions" class="choice-select" required>
                     <option value="Select Option">Select Option</option>
@@ -65,10 +70,10 @@
             <div class="e_com">
                 <label for="ecommerce" class="tooltip" >E-COMMERCE FUNCTIONALITY<span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The level of E-Commerce integration.</span></label> 
                 <div class="buttons" required>
-                    <input type="button" class="choice-btn"  value="None"></input>
-                    <input type="button" class="choice-btn" value="Basic" ></input >
-                    <input type="button" class="choice-btn" value="Advanced"></input>
-                    <input type="button" class="choice-btn"  value="Enterprise"></input >
+                    <input type="button" class="e_com-btn"  value="None"></input>
+                    <input type="button" class="e_com-btn" value="Basic" ></input >
+                    <input type="button" class="e_com-btn" value="Advanced"></input>
+                    <input type="button" class="e_com-btn"  value="Enterprise"></input >
                 </div>
                 <select id="ecommerceOptions" class="choice-select" required>
                     <option value="Select Option">Select Option</option>
@@ -81,10 +86,10 @@
             <div class="cms">
                 <label for="CMS" class="tooltip" >CMS INTEGRATION <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The level of CMS integration.</span></label> 
                 <div class="buttons" required>
-                    <input type="button" class="choice-btn"  value="None"></input>
-                    <input type="button" class="choice-btn" value="Basic" ></input >
-                    <input type="button" class="choice-btn" value="Advanced"></input>
-                    <input type="button" class="choice-btn"  value="Enterprise"></input >
+                    <input type="button" class="cms-btn"  value="None"></input>
+                    <input type="button" class="cms-btn" value="Basic" ></input >
+                    <input type="button" class="cms-btn" value="Advanced"></input>
+                    <input type="button" class="cms-btn"  value="Enterprise"></input >
                 </div>
                 <select id="cmsOptions" class="choice-select" required>
                     <option value="Select Option">Select Option</option>
@@ -97,10 +102,10 @@
             <div class="data_base">
                 <label for="database" class="tooltip" >DATA BASE INTEGRATION <span class="req" style="padding-left: 5px">*</span><span class="tooltipText">The level of database integration.</span></label> 
                 <div class="buttons" required>
-                    <input type="button" class="choice-btn"  value="None"></input>
-                    <input type="button" class="choice-btn" value="Basic" ></input >
-                    <input type="button" class="choice-btn" value="Advanced"></input>
-                    <input type="button" class="choice-btn"  value="Full"></input >
+                    <input type="button" class="data_base-btn"  value="None"></input>
+                    <input type="button" class="data_base-btn" value="Basic" ></input >
+                    <input type="button" class="data_base-btn" value="Advanced"></input>
+                    <input type="button" class="data_base-btn"  value="Full"></input >
                 </div>
                 <select id="databaseOptions" class="choice-select" required>
                     <option value="Select Option">Select Option</option>

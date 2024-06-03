@@ -1,55 +1,25 @@
 // Handlers
-let pageCountValue = document.getElementById("range-value");
-let slider = document.getElementById("page-count");
+let buttons = document.querySelectorAll(".page-count-btn");
 
-// Function to update pageCountValue based on slider value
+// Function to update pageCountValue based on button click
 function updatePageCountValue() {
-  let sliderValue = parseInt(slider.value);
-  let pageCount = "";
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Add 'chosen' class to clicked button and remove from others
+      buttons.forEach((btn) => {
+        if (btn === button) {
+          btn.classList.add("chosen");
+          btn.classList.remove("not-chosen");
+        } else {
+          btn.classList.remove("chosen");
+          btn.classList.add("not-chosen");
+        }
+      });
 
-  // Determine pageCount range based on the slider steps
-  if (sliderValue === 1) {
-    pageCountValue.value = "1-10";
-    pageCount = "1-10";
-    console.log("1-10");
-  } else if (sliderValue === 2) {
-    pageCountValue.value = "10-50";
-    pageCount = "10-50";
-    console.log("10-50");
-  } else if (sliderValue === 3) {
-    pageCountValue.value = "50-150";
-    pageCount = "50-150";
-    console.log("50-150");
-  } else if (sliderValue === 4) {
-    pageCountValue.value = "150-250";
-    pageCount = "150-250";
-    console.log("150-250");
-  } else if (sliderValue === 5) {
-    pageCountValue.value = "250+";
-    pageCount = "250+";
-    console.log("250+");
-  }
-}
-
-// Function to handle input changes for page count
-function handleInputChanges(inputId, valueId) {
-  let input = document.getElementById(inputId);
-  let value = document.getElementById(valueId);
-  input.addEventListener("input", function () {
-    value.textContent = this.value;
+      console.log(button.value);
+    });
   });
 }
-
-// handle custom slider input
-const range = document.querySelector("#page-count");
-range.addEventListener("input", () => {
-  const min = range.min;
-  const max = range.max;
-  const currentVal = range.value;
-
-  range.style.backgroundSize =
-    ((currentVal - min) / (max - min)) * 100 + "% 100%";
-});
 
 // Function to handle button clicks for styling, e-com, CMS, and database
 function handleButtonClicks(groupClassName) {
@@ -106,14 +76,8 @@ document.querySelectorAll(".design-btn").forEach((button) => {
   });
 });
 
-// Add event listener to slider to listen for changes in value
-slider.addEventListener("input", updatePageCountValue);
-
-// Call the function initially to set the initial value
+// Add event listener to buttons to update pageCountValue and handle classes
 updatePageCountValue();
-
-// Call handleInputChanges function for page count
-handleInputChanges("page-count", "page-count-value", "range-value");
 
 // Call handleButtonClicks function for styling, e-com, CMS, and database
 handleButtonClicks("style");
@@ -210,12 +174,12 @@ function calculatePrice() {
   }
 
   // platform type
-  let platformType = document.querySelector(".platform-options").value;
+  let platformType = document.querySelector(".platform-choices").value;
 
   // Set pagePriceA and pagePriceB based on pageCount
   let pagePriceA = "";
   let pagePriceB = "";
-  let pageCount = document.getElementById("range-value").value;
+  let pageCount = document.querySelector(".page-count-btn").value;
   if (pageCount === "1-10") {
     pagePriceA = 100;
     pagePriceB = 1000;
@@ -230,14 +194,14 @@ function calculatePrice() {
     pagePriceB = 25000;
   } else if (pageCount === "250+") {
     pagePriceA = 25000;
-    pagePriceB = 0;
+    pagePriceB = 25000; 
   }
 
   // See seoPriceA and seoPriceB based on pageCount
   let seoPriceA = "";
   let seoPriceB = "";
-  let seoBasePrice = 2000;
-  let seoType = document.querySelector(".seo-btn").value;
+  const seoBasePrice = 2000;
+  let seoType = document.querySelector(".seo-btn.chosen").value;
   if (seoType === "NO") {
     seoPriceA = 0;
     seoPriceB = 0;
@@ -248,7 +212,7 @@ function calculatePrice() {
 
   // Set designPrice
   let designPrice = 0;
-  let designType = document.querySelector(".design-btn").value;
+  let designType = document.querySelector(".design-btn.chosen").value;
   if (designType === "NO") {
     designPrice = 0;
   } else if (designType === "YES") {
@@ -257,7 +221,7 @@ function calculatePrice() {
 
   // Set stylePrice
   let stylePrice = 0;
-  let styleType = document.querySelector(".style .choice-btn").value;
+  let styleType = document.querySelector(".style-btn.chosen").value;
   if (styleType === "Simple") {
     stylePrice = 1000;
   } else if (styleType === "Moderate") {
@@ -269,7 +233,7 @@ function calculatePrice() {
   }
   // Set ecommercePrice
   let ecommercePrice = 0;
-  let ecommerceType = document.querySelector(".e_com .choice-btn").value;
+  let ecommerceType = document.querySelector(".e_com-btn.chosen").value;
   if (ecommerceType === "Basic") {
     ecommercePrice = 3000;
   } else if (ecommerceType === "Advanced") {
@@ -279,7 +243,7 @@ function calculatePrice() {
   }
   // Set databasePrice
   let databasePrice = 0;
-  let databaseType = document.querySelector(".data_base .choice-btn").value;
+  let databaseType = document.querySelector(".data_base-btn.chosen").value;
   if (databaseType === "Basic") {
     databasePrice = 2000;
   } else if (databaseType === "Advanced") {
@@ -290,7 +254,7 @@ function calculatePrice() {
 
   // Set cmsPrice
   let cmsPrice = 0;
-  let cmsType = document.querySelector(".cms .choice-btn").value;
+  let cmsType = document.querySelector(".cms-btn.chosen").value;
   if (cmsType === "Basic") {
     cmsPrice = 2000;
   } else if (cmsType === "Advanced") {
@@ -340,7 +304,7 @@ function calculatePrice() {
     platformPrice;
 
   // Construct the quote statement
-  const quoteStatement = `We estimate your project will cost between $${totalPriceA} and $${totalPriceB}. Please complete the form below for an exact quote from WebFX website design strategist.`;
+  const quoteStatement = `We estimate your project will cost between $${totalPriceA} and $${totalPriceB}. Please complete the form below for an exact quote from Take2 website design strategist.`;
 
   // Construct the quote details
   const quoteDetailsArray = [
