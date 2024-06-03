@@ -178,7 +178,6 @@ input[type="range"]::-moz-range-thumb {
   -o-transform: translateY(2px);
 }
 
-
 .seo-btn,
 .design-btn {
   border: none;
@@ -195,28 +194,21 @@ input[type="range"]::-moz-range-thumb {
   -o-border-radius: 10px;
 }
 
-.design-btn,
-.page-count-btn,
-.cms-btn,
-.data_base-btn,
-.e_com-btn,
-.style-btn {
+.choice-btn, .page-count-btn {
   border: none;
   color: #142034;
   background-color: white;
   border-radius: 10px;
   font-weight: bolder;
-  margin-left: 2px;
   font-size: 1.8vw;
   max-width: 20vw;
   padding: 1vw 1.5vw;
   box-shadow: 4px 8px 10px #1c2c48;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 
+.choice-btn {
+  margin-left: 2px;
+}
 
 .page-count-btn {
   margin-left: 2vw;
@@ -225,21 +217,15 @@ input[type="range"]::-moz-range-thumb {
 #enquire:hover,
 .seo-btn:hover,
 .design-btn:hover,
-.cms-btn:hover,
-.data_base-btn:hover,
-.e_com-btn:hover,
-.style-btn:hover {
+.choice-btn:hover {
   cursor: pointer;
   background-color: #207de9;
   color: white;
 }
 
-.cms-btn:active,
+.choice-btn:active,
 .seo-btn:active,
-.design-btn:active,
-.data_base-btn:active,
-.e_com-btn:active,
-.style-btn:active {
+.design-btn:active {
   background-color: #207de9;
   box-shadow: 2px 4px 5px #1c2c48;
   transform: translateY(4px);
@@ -265,7 +251,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .platform-choices {
-    color: #207de9;
+  color: #207de9;
 }
 
 .platform-options:hover {
@@ -336,11 +322,11 @@ input[type="range"]::-moz-range-thumb {
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    list-style-type: none;
-    padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style-type: none;
+  padding-left: 10px;
 }
 
 .req {
@@ -409,7 +395,7 @@ ul {
   transition: visibility 0s, opacity 1s ease-in-out;
   text-align: center;
   border-radius: 6px;
-  padding: 5px ;
+  padding: 5px;
   position: absolute;
   z-index: 1;
   right: -85px;
@@ -422,7 +408,7 @@ ul {
 .tooltip:hover .tooltipText {
   visibility: visible;
   opacity: 0.3;
-  transition-delay:  0.5s;
+  transition-delay: 0.5s;
 }
 
 /* Add this media query for screens under 425px width */
@@ -494,6 +480,15 @@ ul {
     justify-content: center;
     align-items: center;
     margin-bottom: 2vw;
+  }
+
+  input#page-count.slider {
+    width: 90%;
+  }
+
+  #range-value {
+    max-width: 30%;
+    font-size: 1rem;
   }
 
   div.form-input {

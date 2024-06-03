@@ -85,7 +85,6 @@ handleButtonClicks("e_com");
 handleButtonClicks("cms");
 handleButtonClicks("data_base");
 
-
 // Function to validate page count input
 function validatePageCount(pageCount) {
   const validPageCounts = ["1-10", "10-50", "50-150", "150-250", "250+"];
@@ -136,11 +135,10 @@ function validatePlatform(platformType) {
     "Wordpress",
     "Woocommerce",
     "Wix",
-    "Rocketspark"
+    "Rocketspark",
   ];
   return validPlatformTypes.includes(platformType);
 }
-
 
 function calculatePrice() {
   // Check if any option is not selected
@@ -194,7 +192,7 @@ function calculatePrice() {
     pagePriceB = 25000;
   } else if (pageCount === "250+") {
     pagePriceA = 25000;
-    pagePriceB = 25000; 
+    pagePriceB = 25000;
   }
 
   // See seoPriceA and seoPriceB based on pageCount
@@ -221,7 +219,7 @@ function calculatePrice() {
 
   // Set stylePrice
   let stylePrice = 0;
-  let styleType = document.querySelector(".style-btn.chosen").value;
+  let styleType = document.querySelector(".style .choice-btn.chosen").value;
   if (styleType === "Simple") {
     stylePrice = 1000;
   } else if (styleType === "Moderate") {
@@ -233,7 +231,7 @@ function calculatePrice() {
   }
   // Set ecommercePrice
   let ecommercePrice = 0;
-  let ecommerceType = document.querySelector(".e_com-btn.chosen").value;
+  let ecommerceType = document.querySelector(".e_com .choice-btn.chosen").value;
   if (ecommerceType === "Basic") {
     ecommercePrice = 3000;
   } else if (ecommerceType === "Advanced") {
@@ -243,7 +241,7 @@ function calculatePrice() {
   }
   // Set databasePrice
   let databasePrice = 0;
-  let databaseType = document.querySelector(".data_base-btn.chosen").value;
+  let databaseType = document.querySelector(".data_base .choice-btn.chosen").value;
   if (databaseType === "Basic") {
     databasePrice = 2000;
   } else if (databaseType === "Advanced") {
@@ -254,7 +252,7 @@ function calculatePrice() {
 
   // Set cmsPrice
   let cmsPrice = 0;
-  let cmsType = document.querySelector(".cms-btn.chosen").value;
+  let cmsType = document.querySelector(".cms .choice-btn.chosen").value;
   if (cmsType === "Basic") {
     cmsPrice = 2000;
   } else if (cmsType === "Advanced") {
