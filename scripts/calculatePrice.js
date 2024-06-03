@@ -1,149 +1,10 @@
-// Handlers
-let buttons = document.querySelectorAll(".page-count-btn");
-
-// Function to update pageCountValue based on button click
-function updatePageCountValue() {
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Add 'chosen' class to clicked button and remove from others
-      buttons.forEach((btn) => {
-        if (btn === button) {
-          btn.classList.add("chosen");
-          btn.classList.remove("not-chosen");
-        } else {
-          btn.classList.remove("chosen");
-          btn.classList.add("not-chosen");
-        }
-      });
-
-      console.log(button.value);
-    });
-  });
-}
-
-// Function to handle button clicks for styling, e-com, CMS, and database
-function handleButtonClicks(groupClassName) {
-  document
-    .querySelectorAll("." + groupClassName + " .choice-btn")
-    .forEach((button) => {
-      button.addEventListener("click", () => {
-        document
-          .querySelectorAll("." + groupClassName + " .choice-btn")
-          .forEach((btn) => {
-            btn.classList.remove("chosen");
-            btn.classList.add("not-chosen");
-          });
-        button.classList.remove("not-chosen");
-        button.classList.add("chosen");
-        console.log(button.value);
-      });
-    });
-}
-
-// Handle SEO button clicks
-document.querySelectorAll(".seo-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".seo-btn").forEach((btn) => {
-      btn.classList.remove("chosen");
-      btn.classList.add("not-chosen");
-    });
-    button.classList.remove("not-chosen");
-    button.classList.add("chosen");
-
-    if (button.value === "NO") {
-      console.log("No SEO");
-    } else if (button.value === "YES") {
-      console.log("Yes SEO");
-    }
-  });
-});
-
-// Handle Responsive Design button clicks
-document.querySelectorAll(".design-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".design-btn").forEach((btn) => {
-      btn.classList.remove("chosen");
-      btn.classList.add("not-chosen");
-    });
-    button.classList.remove("not-chosen");
-    button.classList.add("chosen");
-
-    if (button.value === "NO") {
-      console.log("On-page SEO");
-    } else if (button.value === "YES") {
-      console.log("Technical SEO");
-    }
-  });
-});
-
-// Add event listener to buttons to update pageCountValue and handle classes
-updatePageCountValue();
-
-// Call handleButtonClicks function for styling, e-com, CMS, and database
-handleButtonClicks("style");
-handleButtonClicks("e_com");
-handleButtonClicks("cms");
-handleButtonClicks("data_base");
-
-// Function to validate page count input
-function validatePageCount(pageCount) {
-  const validPageCounts = ["1-10", "10-50", "50-150", "150-250", "250+"];
-  return validPageCounts.includes(pageCount);
-}
-
-// Function to validate SEO button selection
-function validateSEO(seoType) {
-  return seoType === "YES" || seoType === "NO";
-}
-
-// Function to validate Responsive Design button selection
-function validateDesign(designType) {
-  return designType === "YES" || designType === "NO";
-}
-
-// Function to validate Style button selection
-function validateStyle(styleType) {
-  const validStyleTypes = ["Simple", "Moderate", "High-End", "World Class"];
-  return validStyleTypes.includes(styleType);
-}
-
-// Function to validate E-commerce button selection
-function validateEcommerce(ecommerceType) {
-  const validEcommerceTypes = ["Basic", "Advanced", "Enterprise"];
-  return validEcommerceTypes.includes(ecommerceType);
-}
-
-// Function to validate CMS button selection
-function validateCMS(cmsType) {
-  const validCMSTypes = ["Basic", "Advanced", "Enterprise"];
-  return validCMSTypes.includes(cmsType);
-}
-
-// Function to validate Database button selection
-function validateDatabase(databaseType) {
-  const validDatabaseTypes = ["Basic", "Advanced", "Full"];
-  return validDatabaseTypes.includes(databaseType);
-}
-
-// Function to validate Platform selection
-function validatePlatform(platformType) {
-  const validPlatformTypes = [
-    "Custom",
-    "Webflow",
-    "Shopify",
-    "Squarespace",
-    "Wordpress",
-    "Woocommerce",
-    "Wix",
-    "Rocketspark",
-  ];
-  return validPlatformTypes.includes(platformType);
-}
-
 function calculatePrice() {
   // Check if any option is not selected
   let errorMessages = [];
 
+  if (document.querySelector(".page-count-btn.chosen") === null) {
+    errorMessages.push("Please select a Page Count option.");
+  }
   if (document.querySelector(".seo-btn.chosen") === null) {
     errorMessages.push("Please select a SEO option.");
   }
@@ -177,7 +38,7 @@ function calculatePrice() {
   // Set pagePriceA and pagePriceB based on pageCount
   let pagePriceA = "";
   let pagePriceB = "";
-  let pageCount = document.querySelector(".page-count-btn").value;
+  let pageCount = document.querySelector(".page-count-btn.chosen").value;
   if (pageCount === "1-10") {
     pagePriceA = 100;
     pagePriceB = 1000;
@@ -241,7 +102,9 @@ function calculatePrice() {
   }
   // Set databasePrice
   let databasePrice = 0;
-  let databaseType = document.querySelector(".data_base .choice-btn.chosen").value;
+  let databaseType = document.querySelector(
+    ".data_base .choice-btn.chosen"
+  ).value;
   if (databaseType === "Basic") {
     databasePrice = 2000;
   } else if (databaseType === "Advanced") {
@@ -332,43 +195,4 @@ function calculatePrice() {
     document.getElementById("mainPage").style.display = "none";
     document.getElementById("emailForm").style.display = "block";
   }
-}
-
-// Function to display error messages in a modal
-function displayErrorModal(errorMessages) {
-  const modal = document.getElementById("modal");
-  const modalContent = document.querySelector(".modal-content");
-  const errorMessagesContainer = document.getElementById(
-    "errorMessagesContainer"
-  );
-
-  // Clear existing messages
-  errorMessagesContainer.innerHTML = "";
-
-  // Add error messages to the modal
-  errorMessages.forEach((message) => {
-    const errorMessageElement = document.createElement("p");
-    errorMessageElement.textContent = message;
-    errorMessagesContainer.appendChild(errorMessageElement);
-  });
-
-  // Display the modal
-  modal.style.display = "block";
-
-  // Close the modal when clicking on the close button
-  const closeBtn = document.querySelector(".close");
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Close the modal when clicking outside of it
-  window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-
-function getQuote() {
-  window.location.href = "completed.html";
 }
