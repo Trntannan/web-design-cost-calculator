@@ -184,7 +184,7 @@ function calculatePrice() {
   const quoteDetails = "<ul>" + quoteDetailsArray.join("") + "</ul>";
 
   // Set the quote statement and details in the emailForm page
-  document.getElementById("quote-statement").textContent = quoteStatement;
+  document.getElementById("quoteStatement").textContent = quoteStatement;
   document.getElementById("quoteDetails").innerHTML = quoteDetails;
 
   // Reset browser to the top
