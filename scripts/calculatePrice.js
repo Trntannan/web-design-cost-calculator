@@ -30,6 +30,7 @@ function calculatePrice() {
     // Display error messages
     displayErrorModal(errorMessages);
     return;
+    
   }
 
   // platform type
