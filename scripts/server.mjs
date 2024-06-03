@@ -3,6 +3,10 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import sqlite3 from 'sqlite3';
 
+// this is only an example until backend API is decided
+
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
