@@ -1,7 +1,17 @@
 {
-    "type": "module",
-    "dependencies": {
-      "express": "^4.17.1"
-    }
-  }
-  
+  "name": "web-design-calculator",
+  "version": "1.0.0",
+  "description": "Web Design Price Calculator",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Trent Annan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2"
+  },
+  "type": "module"
+}
